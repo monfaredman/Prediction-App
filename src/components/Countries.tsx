@@ -8,6 +8,7 @@ export default function Countries() {
 function getCountryDetail() {
   let url = "https://en.wikipedia.org/w/api.php";
   const params: {
+    [x: string]: string;
     action: string;
     prop: string;
     titles: string;
@@ -21,7 +22,7 @@ function getCountryDetail() {
 
   url = url + "?origin=*";
   Object.keys(params).forEach(function (key) {
-    url += "&" + key + "=" + params[key];
+    url += "&" + key + "=" + params.key;
   });
   console.log(url);
 }
