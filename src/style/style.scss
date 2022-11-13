@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .main {
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/images/bg.png");
+    background-size: contain;
+    background-position: center;
+    padding: 2rem;
+  }
+
+  .header {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    h1 {
+      @apply text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white font-extrabold;
+      margin: auto;
+      text-align: center;
+      font-family: monospace;
+    }
+  }
+
+  .footer {
+    width: 100%;
+  }
+}
