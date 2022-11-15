@@ -73,7 +73,7 @@ export default function Countries(props: any) {
             key={item.source}
             loading="lazy"
             srcSet={item.source}
-            className="rounded-md object-fill !w-[4rem] !h-[4rem]"
+            className="rounded-md object-fill !w-[4rem] !h-[4rem] border border-white border-solid"
           />
         </ImageListItem>
       ))}

@@ -1,0 +1,76 @@
+{
+  "allGroups": [
+    {
+      "group": "A",
+      "teams": [
+        { "Name": "Qatar", "id": 1 },
+        { "Name": "Ecuador", "id": 2 },
+        { "Name": "Senegal", "id": 3 },
+        { "Name": "Netherlands", "id": 4 }
+      ]
+    },
+    {
+      "group": "B",
+      "teams": [
+        { "Name": "England", "id": 1 },
+        { "Name": "Iran", "id": 2 },
+        { "Name": "United States", "id": 3 },
+        { "Name": "Wales", "id": 4 }
+      ]
+    },
+    {
+      "group": "C",
+      "teams": [
+        { "Name": "Argentina", "id": 1 },
+        { "Name": "Saudi Arabia", "id": 2 },
+        { "Name": "Mexico", "id": 3 },
+        { "Name": "Poland", "id": 4 }
+      ]
+    },
+    {
+      "group": "D",
+      "teams": [
+        { "Name": "France", "id": 1 },
+        { "Name": "Australia", "id": 2 },
+        { "Name": "Denmark", "id": 3 },
+        { "Name": "Tunisia", "id": 4 }
+      ]
+    },
+    {
+      "group": "E",
+      "teams": [
+        { "Name": "Spain", "id": 1 },
+        { "Name": "Costa Rica", "id": 2 },
+        { "Name": "Germany", "id": 3 },
+        { "Name": "Japan", "id": 4 }
+      ]
+    },
+    {
+      "group": "F",
+      "teams": [
+        { "Name": "Belgium", "id": 1 },
+        { "Name": "Canada", "id": 2 },
+        { "Name": "Morocco", "id": 3 },
+        { "Name": "Croatia", "id": 4 }
+      ]
+    },
+    {
+      "group": "G",
+      "teams": [
+        { "Name": "Brazil", "id": 1 },
+        { "Name": "Serbia", "id": 2 },
+        { "Name": "Switzerland", "id": 3 },
+        { "Name": "Cameroon", "id": 4 }
+      ]
+    },
+    {
+      "group": "H",
+      "teams": [
+        { "Name": "Portugal", "id": 1 },
+        { "Name": "Ghana", "id": 2 },
+        { "Name": "Uruguay", "id": 3 },
+        { "Name": "South Korea", "id": 4 }
+      ]
+    }
+  ]
+}
