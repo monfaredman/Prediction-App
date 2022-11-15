@@ -8,11 +8,34 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 export default function groups(props: any) {
   const [view, setView] = useState("list");
-  const getCountryDetail = async (name: any) => {
-    const movies = await (await fetch(createUrl(name))).json();
-    const x = movies.query.pages[0].thumbnail;
-    return x;
+  type Employee = {
+    [x: string]: any;
+    source: string;
+    id: number;
+    Name: string;
   };
+  const [countryFlag, setCountryFlag] = useState<Employee[]>([]);
+  useEffect(() => {
+    const getCountryDetail = async () => {
+      setCountryFlag([]);
+      props.group.forEach(async (x: any) => {
+        x.teams.map(async (element: any) => {
+          const movies = await (await fetch(createUrl(element.Name))).json();
+          if (movies.query.pages[0].thumbnail) {
+            setCountryFlag((old: any) => [
+              ...old,
+              {
+                src: movies.query.pages[0].thumbnail.source,
+                Name: element.Name,
+                id: element.id,
+              },
+            ]);
+          }
+        });
+      });
+    };
+    getCountryDetail();
+  }, [props]);
   const createUrl = (element: string) => {
     let url = "https://en.wikipedia.org/w/api.php?origin=*";
     const params: {
@@ -35,6 +58,7 @@ export default function groups(props: any) {
     });
     return url;
   };
+
   return (
     <div>
       <ToggleButtonGroup orientation="vertical" value={view} exclusive>
@@ -42,18 +66,12 @@ export default function groups(props: any) {
           <div key={item.group}>
             {item.teams.map(
               (team: { Name: {}; id: Key | null | undefined }) => (
-                <ToggleButton
-                  aria-label="list"
-                  value={team.Name}
-                  key={team.Name + team.id}
-                >
+                <ToggleButton aria-label="list" value={team.Name} key={team.id}>
                   <ViewListIcon />
                   <img
-                    src={getCountryDetail(team.Name)}
-                    alt={getCountryDetail(team.Name)}
-                    key={getCountryDetail(team.Name)}
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/400px-Flag_of_South_Korea.svg.png"
+                    alt="abc"
                     loading="lazy"
-                    srcSet={getCountryDetail(team.Name)}
                     className="rounded-md object-fill !w-[4rem] !h-[4rem] border border-white border-solid"
                   />
                 </ToggleButton>
