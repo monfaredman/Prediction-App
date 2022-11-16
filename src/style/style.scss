@@ -4,16 +4,19 @@
 
 @layer base {
   .main {
-    width: 100%;
-    height: 100%;
     background-image: url("../assets/images/bg.png");
     background-size: contain;
     background-position: center;
     padding: 2rem;
+    .groups {
+      width: 18%;
+    }
+    .playoff {
+      width: 71%;
+    }
   }
 
   .header {
-    width: 100%;
     margin: auto;
     text-align: center;
     h1 {
@@ -24,6 +27,5 @@
   }
 
   .footer {
-    width: 100%;
   }
 }
