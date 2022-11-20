@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/home";
 import Header from "./header";
 import Footer from "./footer";
-import "../style/style.scss";
 
 const App = () => {
   return (

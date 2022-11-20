@@ -3,73 +3,73 @@
     {
       "group": "A",
       "teams": [
-        { "Name": "Qatar", "id": 1 },
-        { "Name": "Ecuador", "id": 2 },
-        { "Name": "Senegal", "id": 3 },
-        { "Name": "Netherlands", "id": 4 }
+        { "Name": "Qatar", "id": 1, "position": "A8" },
+        { "Name": "Ecuador", "id": 2, "position": "" },
+        { "Name": "Senegal", "id": 3, "position": "" },
+        { "Name": "Netherlands", "id": 4, "position": "" }
       ]
     },
     {
       "group": "B",
       "teams": [
-        { "Name": "England", "id": 1 },
-        { "Name": "Iran", "id": 2 },
-        { "Name": "United States", "id": 3 },
-        { "Name": "Wales", "id": 4 }
+        { "Name": "England", "id": 1, "position": "" },
+        { "Name": "Iran", "id": 2, "position": "" },
+        { "Name": "United States", "id": 3, "position": "" },
+        { "Name": "Wales", "id": 4, "position": "" }
       ]
     },
     {
       "group": "C",
       "teams": [
-        { "Name": "Argentina", "id": 1 },
-        { "Name": "Saudi Arabia", "id": 2 },
-        { "Name": "Mexico", "id": 3 },
-        { "Name": "Poland", "id": 4 }
+        { "Name": "Argentina", "id": 1, "position": "" },
+        { "Name": "Saudi Arabia", "id": 2, "position": "" },
+        { "Name": "Mexico", "id": 3, "position": "" },
+        { "Name": "Poland", "id": 4, "position": "" }
       ]
     },
     {
       "group": "D",
       "teams": [
-        { "Name": "France", "id": 1 },
-        { "Name": "Australia", "id": 2 },
-        { "Name": "Denmark", "id": 3 },
-        { "Name": "Tunisia", "id": 4 }
+        { "Name": "France", "id": 1, "position": "" },
+        { "Name": "Australia", "id": 2, "position": "" },
+        { "Name": "Denmark", "id": 3, "position": "" },
+        { "Name": "Tunisia", "id": 4, "position": "" }
       ]
     },
     {
       "group": "E",
       "teams": [
-        { "Name": "Spain", "id": 1 },
-        { "Name": "Costa Rica", "id": 2 },
-        { "Name": "Germany", "id": 3 },
-        { "Name": "Japan", "id": 4 }
+        { "Name": "Spain", "id": 1, "position": "" },
+        { "Name": "Costa Rica", "id": 2, "position": "" },
+        { "Name": "Germany", "id": 3, "position": "" },
+        { "Name": "Japan", "id": 4, "position": "" }
       ]
     },
     {
       "group": "F",
       "teams": [
-        { "Name": "Belgium", "id": 1 },
-        { "Name": "Canada", "id": 2 },
-        { "Name": "Morocco", "id": 3 },
-        { "Name": "Croatia", "id": 4 }
+        { "Name": "Belgium", "id": 1, "position": "" },
+        { "Name": "Canada", "id": 2, "position": "" },
+        { "Name": "Morocco", "id": 3, "position": "" },
+        { "Name": "Croatia", "id": 4, "position": "" }
       ]
     },
     {
       "group": "G",
       "teams": [
-        { "Name": "Brazil", "id": 1 },
-        { "Name": "Serbia", "id": 2 },
-        { "Name": "Switzerland", "id": 3 },
-        { "Name": "Cameroon", "id": 4 }
+        { "Name": "Brazil", "id": 1, "position": "" },
+        { "Name": "Serbia", "id": 2, "position": "" },
+        { "Name": "Switzerland", "id": 3, "position": "" },
+        { "Name": "Cameroon", "id": 4, "position": "" }
       ]
     },
     {
       "group": "H",
       "teams": [
-        { "Name": "Portugal", "id": 1 },
-        { "Name": "Ghana", "id": 2 },
-        { "Name": "Uruguay", "id": 3 },
-        { "Name": "South Korea", "id": 4 }
+        { "Name": "Portugal", "id": 1, "position": "" },
+        { "Name": "Ghana", "id": 2, "position": "" },
+        { "Name": "Uruguay", "id": 3, "position": "" },
+        { "Name": "South Korea", "id": 4, "position": "" }
       ]
     }
   ]

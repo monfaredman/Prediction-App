@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import groupsData from "assets/data/groups.json";
 import Groups from "components/groups";
 import Playoff from "components/playoffSchedule";
-import "../style/style.scss";
+import "../style/style.css";
 
 export default function Home() {
   // useEffect(() => {
