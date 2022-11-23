@@ -11,24 +11,38 @@
     background-position: center;
     padding: 2rem;
   }
-  .groups {
-    width: 18%;
+  .groups-side {
+    width: 25%;
   }
   .playoff {
     width: 71%;
   }
-
   .header {
     margin: auto;
     text-align: center;
   }
-
   h1 {
     @apply text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white font-extrabold mb-8 mx-auto;
     text-align: center;
     font-family: monospace;
   }
-
-  .footer {
+  .MuiToggleButtonGroup-root.MuiToggleButtonGroup-vertical.border.border-white.border-solid.w-full.css-mjlvw-MuiToggleButtonGroup-root {
+    height: fit-content;
+    background-color: #aab0c494;
+  }
+  .Mui-selected {
+    background-color: red;
+  }
+  .flex.justify-between.flex-wrap {
+    width: 58%;
+  }
+  button {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+  img.rounded-full {
+    width: 3rem;
+    height: 2.5rem;
+    object-fit: fill;
   }
 }
