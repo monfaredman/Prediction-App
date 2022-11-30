@@ -56,21 +56,21 @@ export default function Home() {
 
   return (
     <div>
-      <div className="w-full flex justify-between  mx-auto mt-6 mb-10">
-        <div className="groups-side">
+      <div className="w-full flex justify-between mx-auto mt-6 mb-10">
+        <div className="groups-side w-[12%] ">
           <Groups
             leftHandleChange={leftParentHandleChange}
             group={groupsData.allGroups.slice(0, 4)}
             type="left"
           />
         </div>
-        <div className="playoff">
+        <div className="playoff w-[78%] m-auto">
           <Playoff
             leftSelected={finalLeftItemSelected}
             rightSelected={finalRightItemSelected}
           />
         </div>
-        <div className="groups-side ">
+        <div className="groups-side w-[12%] ">
           <Groups
             rightHandleChange={rightParentHandleChange}
             group={groupsData.allGroups.slice(4, 8)}

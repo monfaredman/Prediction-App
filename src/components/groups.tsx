@@ -153,17 +153,11 @@ export default function groups(props: any) {
     setCountryFlag(yourNextList);
   };
   return (
-    <div
-      className={
-        props.type === "left"
-          ? "ml-0 mr-auto flex justify-between flex-wrap"
-          : "flex justify-between flex-wrap mr-0 ml-auto"
-      }
-    >
+    <div className="mx-auto flex !justify-between !flex-wrap">
       {Object.keys(groupObj)
         .sort()
         .map((item: string | any, i: number) => (
-          <div className="mb-10 ">
+          <div key={item} className="mb-10 w-[45%]">
             <p className="text-center mx-auto ">
               <span className="font-bold text-white bg-green-500  border border-solid border-white rounded-full w-16 px-3 py-2">
                 {item}
@@ -195,7 +189,7 @@ export default function groups(props: any) {
                       setSelected(!selected);
                     }}
                     color="primary"
-                    className="!bg-white"
+                    className="!bg-white !w-full"
                   >
                     <img
                       key={media.source}
@@ -206,7 +200,7 @@ export default function groups(props: any) {
                           ? "border-2 border-blue-500 border-solid rounded-full "
                           : media.position === `${item}1`
                           ? "border-2 border-yellow-400 border-solid  rounded-full "
-                          : " rounded-full   "
+                          : " rounded-full  border border-solid border-gray-500  "
                       }
                     />
                     {+media.position[1] === 1 ? (
