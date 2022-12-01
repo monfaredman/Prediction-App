@@ -45,7 +45,7 @@ export default function schedule(props: any) {
   };
 
   return (
-    <div className="w-[17%]">
+    <div className="w-[12%] m-auto">
       {props.type === "16" && (
         <p className="text-white text-base font-extrabold  text-center">
           Round Of 16
@@ -58,10 +58,15 @@ export default function schedule(props: any) {
       )}
       {props.type === "4" && (
         <p className="text-white text-base font-extrabold  text-center">
+          Semi Final
+        </p>
+      )}
+      {props.type === "2" && (
+        <p className="text-white text-base font-extrabold  text-center">
           Final
         </p>
       )}
-      {props.leftSelected && (
+      {props.type === "16" && props.leftSelected && (
         <div className="flex flex-col w-full mt-4">
           <div className="bg-white p-2 mb-2 rounded-lg w-full mx-auto">
             {!props?.leftSelected.length && (
@@ -203,7 +208,7 @@ export default function schedule(props: any) {
           </div>
         </div>
       )}
-      {props.rightSelected && (
+      {props.type === "16" && props.rightSelected && (
         <div className="flex flex-col w-full mt-4">
           <div className="bg-white p-2 mb-2 rounded-lg w-full mx-auto">
             {!props?.rightSelected.length && (
@@ -343,6 +348,269 @@ export default function schedule(props: any) {
                   </ToggleButtonGroup>
                 ))}
           </div>
+        </div>
+      )}
+      {props.type === "8" && props.leftSelected && (
+        <div className="flex flex-col w-full mt-4">
+          <div className="bg-white p-2 mb-2 rounded-lg w-full mx-auto">
+            {props?.leftSelected &&
+              props?.leftSelected
+                .filter(
+                  (x: any) =>
+                    x.position === "A1" ||
+                    x.position === "B2" ||
+                    x.position === "C1" ||
+                    x.position === "D2"
+                )
+                .map((item: any, i: number) => (
+                  <ToggleButtonGroup
+                    value={leftValue[0]}
+                    exclusive
+                    key={item.source}
+                    size="small"
+                    orientation="vertical"
+                    color="primary"
+                    className=" border border-white border-solid !w-full !p-0 !m-0"
+                  >
+                    <ToggleButton
+                      size="small"
+                      aria-label="list"
+                      value={item}
+                      color="primary"
+                      onClick={() => {
+                        handleValue(item, 0, "left");
+                      }}
+                      className="!bg-white !w-full !h-10 !p-0 !m-0 selected"
+                    >
+                      {item.Name}
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                ))}
+          </div>
+          <div className="bg-white p-2 mb-2 rounded-lg w-full mx-auto">
+            {props?.leftSelected &&
+              props?.leftSelected
+                .filter(
+                  (x: any) =>
+                    x.position === "E1" ||
+                    x.position === "F2" ||
+                    x.position === "G1" ||
+                    x.position === "H2"
+                )
+                .map((item: any, i: number) => (
+                  <ToggleButtonGroup
+                    value={leftValue[1]}
+                    exclusive
+                    key={item.source}
+                    size="small"
+                    orientation="vertical"
+                    color="primary"
+                    className=" border border-white border-solid !w-full !p-0 !m-0"
+                  >
+                    <ToggleButton
+                      size="small"
+                      aria-label="list"
+                      value={item}
+                      onClick={() => {
+                        handleValue(item, 1, "left");
+                      }}
+                      color="primary"
+                      className="!bg-white !w-full !h-10 !p-0 !m-0"
+                    >
+                      {item.Name}
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                ))}
+          </div>
+        </div>
+      )}
+      {props.type === "8" && props.rightSelected && (
+        <div className="flex flex-col w-full mt-4">
+          <div className="bg-white p-2 mb-2 rounded-lg w-full mx-auto">
+            {props?.rightSelected &&
+              props?.rightSelected
+                .filter(
+                  (x: any) =>
+                    x.position === "B1" ||
+                    x.position === "A2" ||
+                    x.position === "D1" ||
+                    x.position === "C2"
+                )
+                .map((item: any, i: number) => (
+                  <ToggleButtonGroup
+                    value={leftValue[0]}
+                    exclusive
+                    key={item.source}
+                    size="small"
+                    orientation="vertical"
+                    color="primary"
+                    className=" border border-white border-solid !w-full !p-0 !m-0"
+                  >
+                    <ToggleButton
+                      size="small"
+                      aria-label="list"
+                      value={item}
+                      color="primary"
+                      onClick={() => {
+                        handleValue(item, 0, "left");
+                      }}
+                      className="!bg-white !w-full !h-10 !p-0 !m-0 selected"
+                    >
+                      {item.Name}
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                ))}
+          </div>
+          <div className="bg-white p-2 mb-2 rounded-lg w-full mx-auto">
+            {props?.rightSelected &&
+              props?.rightSelected
+                .filter(
+                  (x: any) =>
+                    x.position === "F1" ||
+                    x.position === "E2" ||
+                    x.position === "H1" ||
+                    x.position === "G2"
+                )
+                .map((item: any, i: number) => (
+                  <ToggleButtonGroup
+                    value={leftValue[1]}
+                    exclusive
+                    key={item.source}
+                    size="small"
+                    orientation="vertical"
+                    color="primary"
+                    className=" border border-white border-solid !w-full !p-0 !m-0"
+                  >
+                    <ToggleButton
+                      size="small"
+                      aria-label="list"
+                      value={item}
+                      onClick={() => {
+                        handleValue(item, 1, "left");
+                      }}
+                      color="primary"
+                      className="!bg-white !w-full !h-10 !p-0 !m-0"
+                    >
+                      {item.Name}
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                ))}
+          </div>
+        </div>
+      )}
+      {props.type === "4" && props.leftSelected && (
+        <div className="flex flex-col w-full mt-4">
+          <div className="bg-white p-2 mb-2 rounded-lg w-full mx-auto">
+            {props?.leftSelected &&
+              props?.leftSelected
+                .filter(
+                  (x: any) =>
+                    x.position === "A1" ||
+                    x.position === "B2" ||
+                    x.position === "C1" ||
+                    x.position === "E1" ||
+                    x.position === "F2" ||
+                    x.position === "G1" ||
+                    x.position === "H2" ||
+                    x.position === "D2"
+                )
+                .map((item: any, i: number) => (
+                  <ToggleButtonGroup
+                    value={leftValue[0]}
+                    exclusive
+                    key={item.source}
+                    size="small"
+                    orientation="vertical"
+                    color="primary"
+                    className=" border border-white border-solid !w-full !p-0 !m-0"
+                  >
+                    <ToggleButton
+                      size="small"
+                      aria-label="list"
+                      value={item}
+                      color="primary"
+                      onClick={() => {
+                        handleValue(item, 0, "left");
+                      }}
+                      className="!bg-white !w-full !h-10 !p-0 !m-0 selected"
+                    >
+                      {item.Name}
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                ))}
+          </div>
+        </div>
+      )}
+      {props.type === "4" && props.rightSelected && (
+        <div className="flex flex-col w-full mt-4">
+          <div className="bg-white p-2 mb-2 rounded-lg w-full mx-auto">
+            {props?.rightSelected &&
+              props?.rightSelected
+                .filter(
+                  (x: any) =>
+                    x.position === "B1" ||
+                    x.position === "A2" ||
+                    x.position === "D1" ||
+                    x.position === "C2" ||
+                    x.position === "F1" ||
+                    x.position === "E2" ||
+                    x.position === "H1" ||
+                    x.position === "G2"
+                )
+                .map((item: any, i: number) => (
+                  <ToggleButtonGroup
+                    value={leftValue[1]}
+                    exclusive
+                    key={item.source}
+                    size="small"
+                    orientation="vertical"
+                    color="primary"
+                    className=" border border-white border-solid !w-full !p-0 !m-0"
+                  >
+                    <ToggleButton
+                      size="small"
+                      aria-label="list"
+                      value={item}
+                      onClick={() => {
+                        handleValue(item, 1, "left");
+                      }}
+                      color="primary"
+                      className="!bg-white !w-full !h-10 !p-0 !m-0"
+                    >
+                      {item.Name}
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                ))}
+          </div>
+        </div>
+      )}
+      {props.type === "2" && props.finalSelected.length && (
+        <div className="bg-white p-2 mb-2 rounded-lg w-full mx-auto">
+          {props?.finalSelected &&
+            props?.finalSelected.map((item: any, i: number) => (
+              <ToggleButtonGroup
+                value={leftValue[1]}
+                exclusive
+                key={item.source}
+                size="small"
+                orientation="vertical"
+                color="primary"
+                className=" border border-white border-solid !w-full !p-0 !m-0"
+              >
+                <ToggleButton
+                  size="small"
+                  aria-label="list"
+                  value={item}
+                  onClick={() => {
+                    handleValue(item, 1, "left");
+                  }}
+                  color="primary"
+                  className="!bg-white !w-full !h-10 !p-0 !m-0"
+                >
+                  {item.Name}
+                </ToggleButton>
+              </ToggleButtonGroup>
+            ))}
         </div>
       )}
     </div>
