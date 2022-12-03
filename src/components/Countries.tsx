@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import CountriesData from "assets/data/countries.json";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export default function Countries(props: any) {
   type Employee = {
@@ -67,14 +68,17 @@ export default function Countries(props: any) {
           cols={1}
           key={item.source}
         >
-          <img
-            src={item.source}
-            alt={item.source}
-            key={item.source}
-            loading="lazy"
-            srcSet={item.source}
-            className="rounded-md object-fill !w-[4rem] !h-[4rem] border border-white border-solid"
-          />
+          {item.source && (
+            <img
+              src={item.source}
+              alt={item.source}
+              key={item.source}
+              loading="lazy"
+              srcSet={item.source}
+              className="rounded-md object-fill !w-[4rem] !h-[4rem] border border-white border-solid"
+            />
+          )}
+          {!item.source && <CircularProgress />}
         </ImageListItem>
       ))}
     </ImageList>

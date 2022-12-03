@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Schedule from "./schedule";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function groups(props: any) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [leftValue, setLeftValue] = useState(() => ["", "", "", ""]);
@@ -25,10 +26,16 @@ export default function groups(props: any) {
     setRightValue2(e);
   };
   const finalParentHandleChange1 = (e: any) => {
-    setFinalValue((old) => [(old[0] = e), ...old]);
+    setFinalValue((old) => {
+      old[0] = e[0];
+      return [...old];
+    });
   };
   const finalParentHandleChange2 = (e: any) => {
-    setFinalValue((old) => [(old[1] = e), ...old]);
+    setFinalValue((old) => {
+      old[1] = e[1];
+      return [...old];
+    });
   };
 
   return (

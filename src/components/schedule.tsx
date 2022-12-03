@@ -2,11 +2,19 @@
 import { useState, useEffect } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import LooksOneIcon from "@mui/icons-material/LooksOne";
 
 export default function schedule(props: any) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [leftValue, setLeftValue] = useState(() => ["", "", "", ""]);
   const [rightValue, setRightValue] = useState(() => ["", "", "", ""]);
+  const [champion, setChampion] = useState<{
+    source: string;
+    Name: string;
+    id: number;
+    group: string;
+    position: string;
+  }>({ source: "", Name: "", id: 0, group: "", position: "" });
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     if (props.leftHandleChange.length) {
@@ -20,7 +28,6 @@ export default function schedule(props: any) {
   }, [rightValue]);
 
   const handleValue = (event: any, index: any, side: any) => {
-    console.log(event.Name, index);
     if (side === "left") {
       setLeftValue((old) => [
         ...old.map((x, i) => {
@@ -43,9 +50,20 @@ export default function schedule(props: any) {
       ]);
     }
   };
+  const handleChampion = (event: any) => {
+    setChampion(event);
+  };
 
   return (
     <div className="w-[12%] m-auto">
+      {champion.Name && (
+        <div className="mx-auto mb-20 border text-center border-solid border-yellow-500 bg-yellow-200 rounded-md p-1">
+          <LooksOneIcon color="primary" fontSize="large" />
+          <h2 className="text-center text-xl m-auto font-extrabold text-green-500">
+            {champion.Name}
+          </h2>
+        </div>
+      )}
       {props.type === "16" && (
         <p className="text-white text-base font-extrabold  text-center">
           Round Of 16
@@ -589,7 +607,7 @@ export default function schedule(props: any) {
           {props?.finalSelected &&
             props?.finalSelected.map((item: any, i: number) => (
               <ToggleButtonGroup
-                value={leftValue[1]}
+                value={champion}
                 exclusive
                 key={item.source}
                 size="small"
@@ -602,7 +620,7 @@ export default function schedule(props: any) {
                   aria-label="list"
                   value={item}
                   onClick={() => {
-                    handleValue(item, 1, "left");
+                    handleChampion(item);
                   }}
                   color="primary"
                   className="!bg-white !w-full !h-10 !p-0 !m-0"
